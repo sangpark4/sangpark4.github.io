@@ -1,0 +1,735 @@
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HEADER/NAVBAR */
+
+header {
+    height: 70px;
+    width: 100%;
+    background-color: white;
+    position: fixed;
+    display: inline-block;
+    z-index: 1;
+    border-bottom: 3px solid black;
+}
+
+header nav ul{
+    list-style-type: none;
+    margin-right: 100px;
+    margin-top: 15px;
+    float: right;
+}
+
+header nav li {
+    display: inline;
+}
+
+header nav li a {
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 28px;
+}
+
+nav ul a:hover {
+    background-color: black;
+    color: white;
+}
+
+header .logo a {
+    margin-top: 10px;
+    margin-left: 50px;
+    float: left;
+    margin-top: 15px;
+}
+
+.mobiledrop {
+    position: fixed;
+    float: right;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(-135deg, white, #214ED3);
+    clip-path: circle(25px at calc(100% - 85px) 35px);
+    transition: all 0.3s ease-in-out;
+    display: none;
+}
+
+#active:checked ~ .mobiledrop {
+    clip-path: circle(75%);
+}
+
+.menubtn {
+    position: absolute;
+    right: 60px; 
+    top: 10px;
+    z-index: 2;
+    text-align: center;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    color: black;
+    font-size: 20px;
+    cursor: pointer;
+    background: white;
+    display: none;
+}
+
+.mobiledrop ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    list-style-type: none;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.mobiledrop ul li {
+    margin: 40px 0;
+}
+
+.mobiledrop ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 5px 50px;
+    position: relative;
+    line-height: 35px;
+    transition: all 0.3s ease;
+}
+
+.mobiledrop ul li a:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    background: white;
+    left: 0;
+    border-radius: 30px;
+    transform: scaleY(0);
+    z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.mobiledrop ul li a:hover {
+    color: black;
+}
+
+input {
+    display: none;
+}
+
+.mobiledrop ul li a:hover:after {
+    transform: scaleY(1);
+}
+
+@media only screen and (max-width: 976px) {
+    header nav ul {
+        margin-right: 50px;
+    }
+}
+
+@media only screen and (max-width: 927px) {
+    header nav ul {
+        margin-right: 25px;
+    }
+}
+@media only screen and (max-width: 901px) {
+    header .logo a {
+        margin-left: 25px;
+    }
+
+    header nav ul {
+        display: none;
+    }
+
+    .mobiledrop {
+        display: block;
+    }
+
+    .menubtn {
+        display: block;
+    }
+}
+
+/* DROPDOWN MENU */
+
+.dropbtn {
+    background-color: white;
+    color: black;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: none;
+    border-radius: 28px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdowncontent {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 10px 20px 10px rgba(0,0,0,0.2);
+    transform: translateY(-3em);
+    z-index: 1;
+    transition: all 0.3s ease 0s, visibility 0s, linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.dropdowncontent a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px;
+    display: block;
+}
+
+.dropdowncontent a:hover {
+    background-color: white;
+    color: black;
+    font-weight: 900;
+}
+
+.dropdown:hover .dropdowncontent {
+    display: block;
+    transform: translateY(0);
+    transition-delay: 0s, 0s, 0.3s;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: black;
+    color: white;
+} 
+
+/* INTRODUCTION */
+.background {
+    background: url(images/IMG_2279.JPG);
+    background-size: 100%;
+    background-position: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.introduction {
+    background-color: rgba(104, 136, 230, 0.5);
+    float:right;
+    height: 100%;
+    width: 100%;
+    margin-right: 0px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.introduction h1 {
+    font-size: 100px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    padding-top: 400px;
+    letter-spacing: 30px;
+}
+
+.introduction h3 {
+    font-size: 40px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: white;
+    letter-spacing: 10px;
+}
+
+/* SOCIAL MEDIA BUTTONS */
+
+.introduction .socialmedia {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-top: 30px;
+}
+
+.wrapper a {
+    text-decoration: none;
+}
+
+.wrapper .button {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    margin: 0 20px;
+    overflow: hidden;
+    background: white;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper .button:hover {
+    width: 165px;
+}
+
+.wrapper .button .icon {
+    display: inline-block;
+    height: 60px;
+    width: 60px;
+    border-radius: 50px;
+    box-sizing: border-box;
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+    color: black;
+}
+
+.wrapper a:nth-child(1) .button:hover .icon {
+    background: #2867B2; 
+    float: left;
+}
+
+.wrapper a:nth-child(2) .button:hover .icon {
+    background: #E1306C;
+    float: left;
+}
+
+.wrapper .button .icon i {
+    font-size: 25px; 
+    line-height: 60px;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper .button:hover .icon i {
+    color: white;
+}
+
+.wrapper .button span {
+    font-size: 20px; 
+    font-weight: 500; 
+    line-height: 60px;
+    margin-left: 10px;
+    transition: all 0.3s ease-out;
+}
+
+.wrapper a:nth-child(1) .button span {
+    float: left;
+    color: #2867B2;
+}
+
+.wrapper a:nth-child(2) .button span {
+    margin-right: 20px;
+    color: #E1306C;
+}
+
+/* ABOUT */
+
+.aboutsection {
+    margin: 0;
+    padding-top: 150px;
+    top: -70px;
+    position: relative;
+}
+
+.abouttitle {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 60px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    letter-spacing: 15px;
+}
+
+section {
+    width: 100%;
+    text-align: center;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-top: 80px;
+}
+
+section .profilepic {
+    margin-left: 25%;
+}
+
+section .about {
+    width: 21%;
+    height: 500px;
+    background-color: white;
+} 
+
+section .about h3 {
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: left;
+    margin: 0;
+    padding-left: 20px;
+}
+
+section .about p {
+    font-size: 18px; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: left;
+    padding-left: 20px;
+}
+
+section .skills {
+    width: 9%;
+    height: 500px;
+    background-color: white;
+    margin-right: 25%;
+}
+
+.skills h3 {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    text-align: left;
+    margin: 0;
+    padding-left: 20px;
+}
+
+.skills ul li {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    text-align: left;
+    padding: 4px 0;
+}
+
+/* EDUCATION */
+
+.education {
+    width: 100%; 
+    background-color: #f2f0e6;
+    position: relative;
+    margin: 0;
+    margin-top: 200px;
+    scroll-margin-top: 70px;
+}
+
+.education .educationtitle {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto; 
+    padding-bottom: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 60px;
+    padding-top: 80px;
+    text-align: center;
+    border-bottom: 2px solid black;
+    letter-spacing: 20px;
+}
+
+.educationsub {
+    width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+}
+
+.university {
+    height: 400px;
+}
+
+.educationsub .university .unidescription {
+    width: 100%;
+    background-color: #f2f0e6;
+}
+
+.unidescription h3 {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    text-align: center;
+}
+
+.unidescription h4 {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+}
+
+.unidescription h4 {
+    padding-top: 10px;
+}
+
+.location {
+    padding-left: 30px;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    padding-top: 10px;
+    color: royalblue;
+    text-align: center;
+}
+
+.unidescription p {
+    margin: 0;
+    padding-top: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 25px;
+}
+
+.highschool {
+    height: 300px;
+    margin-top: 20px;
+    padding-bottom: 60px;
+}
+
+.education .highschool .hsdescription {
+    width: 100%;
+    background-color: #f2f0e6;
+}
+
+.hsdescription h3 {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 25px;
+    text-align: center;
+}
+
+.hsdescription h4 {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    padding-top:10px;
+    text-align: center;
+}
+
+.hsdescription p {
+    margin: 0;
+    padding-top: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    padding-left: 30px;
+    padding-right: 30px;
+    line-height: 25px; 
+}
+
+/* PROJECTS */
+
+.projects {
+    width: 100%; 
+    background-color: white;
+    scroll-margin-top: 70px;
+}
+
+.projectstitle {
+    padding-top: 80px;
+    padding-bottom: 20px;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 80px;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 60px;
+    border-bottom: 2px solid black;
+    width: 400px;
+    letter-spacing: 15px;
+}
+
+::before, ::after {
+    margin:0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+.projectlist {
+    width: 1300px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.accordian-item {
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: #f2f0e6;
+    box-shadow: 10px 2px 10px rgba(0,0,0,0.1);
+    padding: 20px 30px;
+    border-radius: 20px;
+}
+
+.accordian-link {
+    font-size: 25px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    background-color: #f2f0e6; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.accordian-link i {
+    color: black;
+    padding: 0;
+}
+
+.accordian-link .fa-minus {
+    display: none;
+}
+
+.projectdescription {
+    max-height: 0;
+    overflow: hidden;
+    position: relative;
+    background-color: #d9d8cf;
+    transition: max-height 650ms;
+}
+
+.projectdescription::before {
+    content: ""; 
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background-color: #5d8a98;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.projectdescription .p1photo {
+    position: relative;
+    height: 150px;
+    width: 144px;
+    background: url(images/gearbox.png);
+    background-size: cover;
+    border-radius: 50%;
+    top: 30px;
+    margin-bottom: 55px;
+    margin-left: 50px;
+    float: left;
+    padding: 10px;
+}
+
+.p1description {
+    width: 80%; 
+    float: right;
+    margin-top: 40px;
+    padding-right: 30px;
+}
+
+.projectdescription .p5photo {
+    position: relative; 
+    height: 400px;
+    width: 241px;
+    background: url(images/sack.png);
+    background-size: cover;
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    float: left;
+}
+
+.p5description {
+    width: 70%;
+    float: right;
+    padding-right: 30px;
+    margin-top: 70px;
+}
+
+.projectdescription p {
+    color: black;
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 10px 20px;
+}
+
+.accordian-item:target .projectdescription {
+    max-height: 700px; 
+}
+
+.accordian-item:target .accordian-link .fa-plus {
+    display: none;
+}
+
+.accordian-item:target .accordian-link .fa-minus {
+    display: block;
+}
+
+/* FOOTER */
+
+footer {
+    position: absolute;
+    margin-top: 115px;
+    margin-bottom: 0;
+    width: 100%;
+    height: 150px;
+    background-color: white;
+    border-top: 3px solid lightgrey;
+    text-align: center;
+}
+
+footer .fab, footer .far {
+    padding: 10px;
+    font-size: 25px;
+    width: 25px;
+    margin-left: 10px;
+    border-radius: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+footer .fa-linkedin-in {
+    background: white;
+    color: black;
+    border: 2px solid black;
+}
+
+footer .fa-envelope {
+    background: white;
+    color: black;
+    border: 2px solid black;
+}
+
+footer p a:hover {
+    background: black;
+    color: white;
+}
+
+footer p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+}
+
+.footernav {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+}
+
+.footernav a {
+    color: black;
+    text-decoration: none;
+}
+
+.footernav a:hover {
+    color: royalblue;
+    text-decoration: underline;
+}
