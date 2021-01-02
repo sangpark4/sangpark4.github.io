@@ -1,14 +1,9 @@
-html {
-    scroll-behavior: smooth;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-}
-
 body {
     background-color: white;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    width: 100%;
 }
 
 /* HEADER/NAVBAR */
@@ -62,14 +57,20 @@ header .logo a {
     padding: 0;
     height: 100%;
     width: 100%;
-    background: linear-gradient(-135deg, white, #214ED3);
-    clip-path: circle(25px at calc(100% - 85px) 35px);
+    background: rgba(0, 0, 0, 0.8);
+    clip-path: circle(20px at calc(100% - 85px) 35px);
+    -webkit-clip-path: circle(20px at calc(100% - 85px) 35px);
+    -moz-clip-path: circle(20px at calc(100% - 85px) 35px);
+    -o-clip-path: circle(20px at calc(100% - 85px) 35px);
     transition: all 0.3s ease-in-out;
     display: none;
 }
 
 #active:checked ~ .mobiledrop {
     clip-path: circle(75%);
+    -webkit-clip-path: circle(75%);
+    -moz-clip-path: circle(75%);
+    -o-clip-path: circle(75%);
 }
 
 .menubtn {
@@ -94,6 +95,9 @@ header .logo a {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
     text-align: center;
     list-style-type: none;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -104,7 +108,7 @@ header .logo a {
 }
 
 .mobiledrop ul li a {
-    color: black;
+    color: white;
     text-decoration: none;
     font-size: 20px;
     padding: 5px 50px;
@@ -113,29 +117,13 @@ header .logo a {
     transition: all 0.3s ease;
 }
 
-.mobiledrop ul li a:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 35px;
-    background: white;
-    left: 0;
-    border-radius: 30px;
-    transform: scaleY(0);
-    z-index: -1;
-    transition: transform 0.3s ease;
-}
-
 .mobiledrop ul li a:hover {
-    color: black;
+    color: white;
+    font-weight: 900;
 }
 
 input {
     display: none;
-}
-
-.mobiledrop ul li a:hover:after {
-    transform: scaleY(1);
 }
 
 @media only screen and (max-width: 976px) {
@@ -160,10 +148,16 @@ input {
 
     .mobiledrop {
         display: block;
-    }
+    } 
 
     .menubtn {
         display: block;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    header .logo img {
+        width: 150px;
     }
 }
 
@@ -226,6 +220,7 @@ input {
     background: url(images/IMG_2279.JPG);
     background-size: 100%;
     background-position: center;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
 }
@@ -238,21 +233,52 @@ input {
     margin-right: 0px;
     text-align: center;
     box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .introduction h1 {
     font-size: 100px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
-    padding-top: 400px;
-    letter-spacing: 30px;
 }
 
 .introduction h3 {
     font-size: 40px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: white;
-    letter-spacing: 10px;
+}
+
+@media only screen and (max-width: 2428px) {
+    .background {
+        background: url(images/IMG_2279.JPG);
+        width: 100%;
+        height: 100vh;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@media only screen and (max-width: 994px) {
+    .introduction h1 {
+        font-size: 80px;
+    }
+
+    .introduction h3 {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 725px) {
+    .introduction h1 {
+        font-size: 70px;
+    }
+
+    .introduction h3 {
+        font-size: 20px;
+    }
 }
 
 /* SOCIAL MEDIA BUTTONS */
@@ -261,81 +287,95 @@ input {
     display: grid;
     height: 100%;
     width: 100%;
-    box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    padding-top: 30px;
+    place-items: center;
+    padding-top: 40px;
 }
 
-.wrapper a {
-    text-decoration: none;
+.wrapper {
+    display: inline-flex;
 }
 
-.wrapper .button {
-    display: inline-block;
-    height: 60px;
-    width: 60px;
+.wrapper .icon {
     margin: 0 20px;
-    overflow: hidden;
-    background: white;
-    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
     cursor: pointer;
-    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: all 0.3s ease-out;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -o-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.wrapper .button:hover {
-    width: 165px;
-}
-
-.wrapper .button .icon {
-    display: inline-block;
+.wrapper .icon span {
+    position: relative; 
     height: 60px;
     width: 60px;
-    border-radius: 50px;
-    box-sizing: border-box;
+    display: block;
+    background: white;
+    text-align: center;
+    border-radius: 50%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+}
+
+.wrapper .icon span i {
+    font-size: 25px;
     line-height: 60px;
-    transition: all 0.3s ease-out;
-    color: black;
 }
 
-.wrapper a:nth-child(1) .button:hover .icon {
-    background: #2867B2; 
-    float: left;
-}
-
-.wrapper a:nth-child(2) .button:hover .icon {
-    background: #E1306C;
-    float: left;
-}
-
-.wrapper .button .icon i {
-    font-size: 25px; 
-    line-height: 60px;
-    transition: all 0.3s ease-out;
-}
-
-.wrapper .button:hover .icon i {
+.wrapper .icon:hover span {
     color: white;
 }
 
-.wrapper .button span {
-    font-size: 20px; 
-    font-weight: 500; 
-    line-height: 60px;
-    margin-left: 10px;
-    transition: all 0.3s ease-out;
+.wrapper .icon .tooltip {
+    position: absolute;
+    top: 0px;
+    background: white;
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    padding: 10px 18px;
+    border-radius: 25px;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -webkit-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -moz-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    -o-transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
-.wrapper a:nth-child(1) .button span {
-    float: left;
-    color: #2867B2;
+.wrapper .icon:hover .tooltip {
+    top: -70px;
+    opacity: 1;
+    pointer-events: auto;
 }
 
-.wrapper a:nth-child(2) .button span {
-    margin-right: 20px;
-    color: #E1306C;
+.wrapper .icon .tooltip:before {
+    position: absolute;
+    content: "";
+    height: 15px;
+    width: 15px;
+    background: white;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
 }
+
+.wrapper .icon:hover span, .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0,0,0,0.4);
+}
+
+.wrapper .linkedin:hover span, .wrapper .linkedin:hover .tooltip, .wrapper .linkedin:hover .tooltip:before {
+    background: #2867b2;
+} 
+
+.wrapper .email:hover span, .wrapper .email:hover .tooltip, .wrapper .email:hover .tooltip:before {
+    background: #e1306c;
+} 
 
 /* ABOUT */
 
@@ -344,6 +384,7 @@ input {
     padding-top: 150px;
     top: -70px;
     position: relative;
+    margin-bottom: 200px;
 }
 
 .abouttitle {
@@ -355,26 +396,33 @@ input {
     font-size: 60px;
     text-align: center;
     border-bottom: 2px solid black;
-    letter-spacing: 15px;
 }
 
 section {
     width: 100%;
+    margin-top: 80px;
     text-align: center;
-    display:flex;
+}
+
+.aboutinfo {
+    width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-    margin-top: 80px;
 }
 
 section .profilepic {
-    margin-left: 25%;
+    width: 375px;
+    height: 500px;
+    background: url(images/IMG_1976.JPG);
+    background-size: cover;
 }
 
-section .about {
-    width: 21%;
-    height: 500px;
+.aboutinfo .about {
+    width: 43%;
     background-color: white;
 } 
 
@@ -394,10 +442,8 @@ section .about p {
 }
 
 section .skills {
-    width: 9%;
-    height: 500px;
+    width: 23%;
     background-color: white;
-    margin-right: 25%;
 }
 
 .skills h3 {
@@ -415,40 +461,178 @@ section .skills {
     padding: 4px 0;
 }
 
+.mobileabout {
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+    margin-top: 0px;
+}
+
+.mobileprofilepic {
+    width: 300px;
+    height: 400px;
+    background: url(images/IMG_1976.JPG);
+    background-size: cover;
+}
+
+.mobileaboutdes h3 {
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.mobileaboutdes p {
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.mobileskills h3 {
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.mobileskills p {
+    font-size: 15px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    list-style-type: none;
+    line-height: 10px;
+}
+
+@media only screen and (max-width: 1330px) {
+    .aboutinfo {
+        width: 1200px;
+    }
+}
+
+@media only screen and (max-width: 1240px) {
+    .aboutinfo {
+        width: 1100px;
+    }
+}
+
+@media only screen and (max-width: 1150px) {
+    .aboutinfo {
+        width: 1000px;
+    }
+}
+
+@media only screen and (max-width: 1040px) {
+    .aboutinfo {
+        width: 880px;
+    }
+}
+
+@media only screen and (max-width: 915px) {
+    .abouttitle {
+        font-size: 40px;
+        width: 300px;
+    }
+
+    section .profilepic {
+        width: 300px;
+        height: 400px;
+    }
+
+    section .about h3 {
+        font-size: 20px;
+    }
+
+    section .about p {
+        font-size: 15px;
+    }
+
+    .skills h3 {
+        font-size: 20px;
+    }
+
+    .skills ul li {
+        font-size: 15px;
+    }
+}
+
+@media only screen and (max-width: 895px) {
+    .aboutinfo {
+        width: 750px;
+    }
+}
+
+@media only screen and (max-width: 775px) {
+    .aboutinfo {
+        width: 650px;
+    }
+}
+
+@media only screen and (max-width: 665px) {
+    .aboutinfo{
+        width: 550px;
+        margin-bottom: 0px;
+    }
+
+    .aboutinfo, section .profilepic, section .about h3, section .about p, .skills h3, .skills ul li, section .about, section .skills {
+        display: none;
+    }
+
+    .mobileabout {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 515px) {
+    .aboutinfo {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 415px) {
+    .aboutinfo {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .mobileabout {
+        width: 180px;
+    }
+
+    .mobileprofilepic {
+        width: 180px;
+        height: 240px;
+    }
+
+    .abouttitle {
+        width: 200px;
+        font-size: 30px;
+    }
+}
+
 /* EDUCATION */
 
 .education {
     width: 100%; 
     background-color: #f2f0e6;
-    position: relative;
-    margin: 0;
-    margin-top: 200px;
-    scroll-margin-top: 70px;
 }
 
 .education .educationtitle {
     width: 400px;
     margin-left: auto;
-    margin-right: auto; 
+    margin-right: auto;
     padding-bottom: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 60px;
     padding-top: 80px;
+    margin-bottom: 40px;
     text-align: center;
     border-bottom: 2px solid black;
-    letter-spacing: 20px;
 }
 
 .educationsub {
     width: 1300px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 80px;
+    margin-top: 0px;
 }
 
-.university {
-    height: 400px;
-}
 
 .educationsub .university .unidescription {
     width: 100%;
@@ -469,12 +653,35 @@ section .skills {
     text-align: center;
 }
 
+.mobile h4 {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    display: none;
+}
+
+.mobile h5 {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    display: none;
+}
+
+.mobile2 h4 {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    display: none;
+}
+
 .unidescription h4 {
     padding-top: 10px;
 }
 
 .location {
-    padding-left: 30px;
     margin: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 18px;
@@ -494,9 +701,8 @@ section .skills {
 }
 
 .highschool {
-    height: 300px;
-    margin-top: 20px;
-    padding-bottom: 60px;
+    margin-top: 40px;
+    padding-bottom: 90px;
 }
 
 .education .highschool .hsdescription {
@@ -526,7 +732,130 @@ section .skills {
     font-size: 18px;
     padding-left: 30px;
     padding-right: 30px;
-    line-height: 25px; 
+    line-height: 25px;
+}
+
+@media only screen and (max-width: 1315px) {
+    .educationsub {
+        width: 1200px;
+    }
+}
+
+@media only screen and (max-width: 1215px) {
+    .educationsub {
+        width: 1100px;
+    }
+}
+
+@media only screen and (max-width: 1115px) {
+    .educationsub {
+        width: 1000px;
+    }
+}
+
+@media only screen and (max-width: 1015px) {
+    .educationsub {
+        width: 900px;
+    }
+
+    .unidescription h4 {
+        display: none;
+    }
+
+    .mobile h4, .mobile h5 {
+        display: block;
+    }
+
+    .highschool {
+        margin-top: 100px;  
+    }
+}
+
+@media only screen and (max-width: 915px) {
+    .education .educationtitle {
+        font-size: 40px;
+        width: 300px;
+    }
+
+    .educationsub {
+        margin-top: 30px;
+        width: 800px;
+    }
+
+    .unidescription h3, .hsdescription h3 {
+        font-size: 20px;
+    }
+
+    .mobile h4, .mobile h5, .unidescription p, .location, .hsdescription h4, .hsdescription p {
+        font-size: 15px;
+    }
+
+    .unidescription p, .hsdescription p {
+        line-height: 22px;
+    }
+}
+
+@media only screen and (max-width: 815px) {
+    .educationsub {
+        width: 700px;
+    }
+
+    .education {
+        margin-top: 120px;
+    }
+}
+
+@media only screen and (max-width: 715px) {
+    .educationsub {
+        width: 600px;
+    }
+
+    .education {
+        margin-top: 100px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    .education {
+        margin-top: 80px;
+    }
+}
+
+@media only screen and (max-width: 615px) {
+    .educationsub {
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 515px) {
+    .educationsub {
+        width: 480px;
+    }
+}
+
+@media only screen and (max-width: 415px) {
+    .educationsub {
+        width: 300px;
+    }
+
+    .hsdescription p {
+        padding-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .educationsub {
+        width: 200px;
+    }
+
+    .education .educationtitle {
+        font-size: 30px;
+        width: 200px;
+    }
+
+    .highschool {
+        margin-top: 40px;
+    }
 }
 
 /* PROJECTS */
@@ -534,28 +863,27 @@ section .skills {
 .projects {
     width: 100%; 
     background-color: white;
-    scroll-margin-top: 70px;
+    padding-top: -70px;
+    margin-top: 10px;  
 }
 
 .projectstitle {
-    padding-top: 80px;
     padding-bottom: 20px;
     margin: 0;
-    margin-left: auto;
     margin-right: auto;
+    margin-left: auto;
     margin-bottom: 80px;
+    padding-top: 80px;  
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 60px;
     border-bottom: 2px solid black;
     width: 400px;
-    letter-spacing: 15px;
 }
 
 ::before, ::after {
     margin:0;
     padding: 0;
-    box-sizing: inherit;
 }
 
 .projectlist {
@@ -564,12 +892,18 @@ section .skills {
     padding: 0;
 }
 
+.accordian {
+    width: 100%;
+}
+
 .accordian-item {
     width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 30px;
     background-color: #f2f0e6;
     box-shadow: 10px 2px 10px rgba(0,0,0,0.1);
-    padding: 20px 30px;
+    padding: 20px 0px;
     border-radius: 20px;
 }
 
@@ -584,7 +918,16 @@ section .skills {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 0;
+    padding: 10px 0px;
+}
+
+.accordian-link i {
+    margin-right: 30px;
+}
+
+.accordian-link p {
+    margin: 0;
+    margin-left: 30px;
 }
 
 .accordian-link i {
@@ -601,6 +944,7 @@ section .skills {
     overflow: hidden;
     position: relative;
     background-color: #d9d8cf;
+    margin: 0 30px;
     transition: max-height 650ms;
 }
 
@@ -648,6 +992,49 @@ section .skills {
     float: left;
 }
 
+.mobileed {
+    display: none;
+}
+
+.p1photomob {
+    position: relative;
+    height: 150px;
+    width: 144px; 
+    background: url(images/gearbox.png);
+    background-size: cover;
+    border-radius: 50%;
+    top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+.p1mobiledes {
+    width: 100%;
+    padding: 10px 10px;
+}
+
+.mobileed2 {
+    display: none;
+}
+
+.p5photomob {
+    position: relative; 
+    height: 332px;
+    width: 200px;
+    background: url(images/sack.png);
+    background-size: cover;
+    margin-left: auto;
+    margin-right: auto;
+    top: 30px;
+    margin-bottom: 20px;
+}
+
+.p5mobiledes {
+    width: 100%;
+    padding: 10px 10px;
+}
+
 .p5description {
     width: 70%;
     float: right;
@@ -663,7 +1050,7 @@ section .skills {
 }
 
 .accordian-item:target .projectdescription {
-    max-height: 700px; 
+    max-height: 1000px; 
 }
 
 .accordian-item:target .accordian-link .fa-plus {
@@ -673,6 +1060,171 @@ section .skills {
 .accordian-item:target .accordian-link .fa-minus {
     display: block;
 }
+
+@media only screen and (max-width: 1500px) {
+    .projectlist {
+        width: 1200px;
+    }
+
+    .projectdescription .p1photo {
+        margin-left: 20px;
+    }
+}
+
+@media only screen and (max-width: 1380px) {
+    .projectlist {
+        width: 1000px;
+    }
+
+    .p1description {
+        padding-right: 0px;
+        margin-top: 25px;
+    }
+
+    .projectdescription .p5photo {
+        margin-left: 20px;
+    }
+
+    .p5description {
+        padding-right: 0px;
+        margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .projectlist {
+        width: 800px;
+    }
+
+    .p1description {
+        width: 70%;
+        margin-top: 0px;
+    }
+
+    .projectdescription .p5photo {
+        height: 332px;
+        width: 200px;
+        margin-top: 60px;
+    }
+
+    .p5description {
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .projectlist {
+        width: 600px;
+    }
+
+    .p1description {
+        width: 60%;
+    }
+
+    .projectdescription .p1photo {
+        margin-top: 35px;
+    }
+
+    .mobileed2 {
+        display: block;
+    }
+
+    .projectdescription .p5photo {
+        display: none;
+    }
+
+    .p5description {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 915px) {
+    .projectstitle {
+        font-size: 40px;
+        width: 300px;
+    }
+
+    .projectdescription p {
+        font-size: 15px;
+    }
+
+    .accordian-link {
+        font-size: 19px;
+    }
+
+    .p1description {
+        margin-top: 5px;
+    }
+
+    .projectdescription .p1photo {
+        margin-top: 5px;
+    }
+}
+
+@media only screen and (max-width: 815px) {
+    .projectlist {
+        width: 700px;
+    }
+
+    .projectstitle {
+        margin-bottom: 40px;
+    }
+
+    .projectdescription .p1photo {
+        display: none;
+    }
+
+    .p1description {
+        display: none;
+    }
+
+    .mobileed {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 715px) {
+    .projectlist {
+        width: 600px;
+    }
+}
+
+@media only screen and (max-width: 615px) {
+    .projectlist {
+        width: 500px;
+    }
+}
+
+@media only screen and (max-width: 515px) {
+    .projectlist {
+        width: 400px;
+    }
+
+    .projects {
+        margin-top: 110px;
+    }
+}
+
+@media only screen and (max-width: 415px) {
+    .projects {
+        margin-top: 0px;
+    }
+
+    .projectlist {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 280px) {
+    .projectlist {
+        width: 180px;
+    }
+
+    .projectstitle {
+        font-size: 30px;
+        width: 200px;
+    }
+} 
 
 /* FOOTER */
 
@@ -732,4 +1284,31 @@ footer p {
 .footernav a:hover {
     color: royalblue;
     text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+    footer p {
+        font-size: 15px;
+    }
+
+    footer .fab, footer .far {
+        font-size: 18px;
+        width: 18px;
+    }
+
+    .footernav {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 415px) {
+    .footernav {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    .footernav {
+        font-size: 9px;
+    }
 }
