@@ -108,6 +108,7 @@ header .logo a {
     -o-transform: translate(-50%, -50%);
     text-align: center;
     list-style-type: none;
+    list-style-position: inside;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -163,6 +164,19 @@ input {
 
     .menubtn {
         display: block;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .menubtn {
+        right: 25px;
+    }
+
+    .mobiledrop {
+        clip-path: circle(20px at calc(100% - 50px) 35px);
+        -webkit-clip-path: circle(20px at calc(100% - 50px) 35px);
+        -moz-clip-path: circle(20px at calc(100% - 50px) 35px);
+        -o-clip-path: circle(20px at calc(100% - 50px) 35px);
     }
 }
 
@@ -570,11 +584,19 @@ section .skills {
     .aboutinfo {
         width: 750px;
     }
+
+    .aboutsection {
+        margin-bottom: 80px;
+    }
 }
 
 @media only screen and (max-width: 775px) {
     .aboutinfo {
         width: 650px;
+    }
+
+    .aboutsection {
+        margin-bottom: 0px;
     }
 }
 
@@ -818,10 +840,6 @@ section .skills {
     .educationsub {
         width: 700px;
     }
-
-    .education {
-        margin-top: 120px;
-    }
 }
 
 @media only screen and (max-width: 715px) {
@@ -835,16 +853,6 @@ section .skills {
 
     .mobile2 h4 {
         display: block;
-    }
-
-    .education {
-        margin-top: 100px;
-    }
-}
-
-@media only screen and (max-width: 650px) {
-    .education {
-        margin-top: 80px;
     }
 }
 

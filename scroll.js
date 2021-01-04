@@ -9,3 +9,8 @@ $('header a').on('click', function(e) {
         }, 900);
     }
 });
+
+
+const x = () => {
+    document.getElementById("active").checked = false
+}
