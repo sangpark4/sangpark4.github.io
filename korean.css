@@ -100,6 +100,7 @@ header .logo a {
 .mobiledrop ul {
     display: none;
     position: absolute;
+    width: 100vw;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -108,7 +109,6 @@ header .logo a {
     -o-transform: translate(-50%, -50%);
     text-align: center;
     list-style-type: none;
-    list-style-position: inside;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -1085,7 +1085,7 @@ section .skills {
 }
 
 .accordian-item:target .projectdescription {
-    max-height: 1000px; 
+    max-height: 1500px; 
 }
 
 .accordian-item:target .accordian-link .fa-plus {

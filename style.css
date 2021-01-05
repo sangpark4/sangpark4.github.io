@@ -108,7 +108,6 @@ header .logo a {
     -o-transform: translate(-50%, -50%);
     text-align: center;
     list-style-type: none;
-    list-style-position: inside;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
@@ -980,7 +979,7 @@ section .skills {
     position: relative;
     background-color: #d9d8cf;
     margin: 0 30px;
-    transition: max-height 650ms;
+    transition: max-height 800ms;
 }
 
 .projectdescription::before {
@@ -1085,7 +1084,7 @@ section .skills {
 }
 
 .accordian-item:target .projectdescription {
-    max-height: 1000px; 
+    max-height: 1500px; 
 }
 
 .accordian-item:target .accordian-link .fa-plus {
