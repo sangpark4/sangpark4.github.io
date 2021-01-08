@@ -18,7 +18,7 @@ Card.prototype.display = function(){
         this.minus.style.display = 'none';
         this.opened = false
     } else {
-        this.elem.style.maxHeight = '1100px';
+        this.elem.style.maxHeight = '1300px';
         this.plus.style.display = 'none';
         this.minus.style.display = 'block';
         this.opened = true;
